@@ -59,6 +59,11 @@ public class Car {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(id, model, manufacturer, drivers);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -70,10 +75,5 @@ public class Car {
         return Objects.equals(id, car.id) && Objects.equals(model, car.model)
                 && Objects.equals(manufacturer, car.manufacturer)
                 && Objects.equals(drivers, car.drivers);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, model, manufacturer, drivers);
     }
 }
